@@ -19,7 +19,7 @@ export default function Hero() {
                   stiffness: 100,
                   damping: 10
                 }}
-                className="inline-block"
+                style={{ display: 'inline-block' }}
               >
                 {letter}
               </motion.span>
