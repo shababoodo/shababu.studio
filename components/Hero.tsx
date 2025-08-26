@@ -9,8 +9,8 @@ export default function Hero() {
       <div className="grid place-items-center min-h-[60vh]">
         <ShababooLogo
           className="w-[600px] h-auto"
-          stroke="#111827"
-          fill="#4471c1"
+          stroke="#708090"
+          fill="#708090"
           strokeWidth={3}
           duration={2.2}
         />

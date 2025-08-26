@@ -35,13 +35,20 @@ export default function Services() {
           </h2>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {services.map((service, index) => {
+            const getInitialPosition = () => {
+              if (index === 0) return { opacity: 0, x: -100 } // Left card from left
+              if (index === 2) return { opacity: 0, x: 100 }  // Right card from right
+              return { opacity: 0, y: 30 } // Center card from bottom
+            }
+            
+            return (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={getInitialPosition()}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
+              transition={{ delay: index * 0.2, duration: 0.6, ease: 'easeOut' }}
               whileHover={{ y: -10 }}
             >
               <div className="text-center p-8 rounded-2xl hover:shadow-xl transition-shadow">
@@ -52,7 +59,7 @@ export default function Services() {
               <p className="text-slate-600">{service.description}</p>
               </div>
             </motion.div>
-          ))}
+          )})}
         </div>
       </div>
     </section>

@@ -11,8 +11,8 @@ type Props = {
 }
 
 export default function ShababooLogo({
-  stroke = '#3b82f6',
-  fill = 'currentColor',
+  stroke = '#708090',
+  fill = '#708090',
   strokeWidth = 2,
   duration = 2.0,
   className
